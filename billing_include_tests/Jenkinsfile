@@ -1,0 +1,17 @@
+pipeline{
+				agent any
+				
+				tools{
+					maven 'Maven' //Nombre que se agregó en JENKINS
+				}
+				
+				stages{
+					stage('Verify Tools'){
+						steps{
+							bat '''
+								mvn -version
+							'''
+						}
+					}
+				}
+			}
